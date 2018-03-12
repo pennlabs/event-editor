@@ -1,4 +1,4 @@
-class AddAttachmentImageUrlToEvents < ActiveRecord::Migration[4.2]
+class AddAttachmentImageToEvents < ActiveRecord::Migration[4.2]
   def self.up
     change_table :event do |t|
       t.attachment :image
