@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: MyText
+  name: MyText
+  description: MyText
+  image_url: MyText
+  start_time: 2018-03-11 20:02:40
+  end_time: 2018-03-11 20:02:40
+
+two:
+  type: MyText
+  name: MyText
+  description: MyText
+  image_url: MyText
+  start_time: 2018-03-11 20:02:40
+  end_time: 2018-03-11 20:02:40

@@ -1,0 +1,20 @@
+Metrics/LineLength:
+    Max: 120
+Metrics/MethodLength:
+    Enabled: false
+Style/EmptyMethod:
+    Enabled: false
+Style/SymbolArray:
+    Enabled: false
+Style/Documentation:
+    Enabled: false
+Style/RegexpLiteral:
+    Enabled: false
+
+AllCops:
+    Exclude:
+        - 'db/**/*'
+        - 'bin/**/*'
+        - 'config/**/*'
+        - 'mailers/**/*'
+        - 'test/**/*'

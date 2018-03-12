@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#content {
+    max-width: 1000px;
+    margin: 30px auto;
+}
+#content table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+table img {
+    max-width: 50px;
+}
+table .btn {
+    margin-bottom: 10px;
+}

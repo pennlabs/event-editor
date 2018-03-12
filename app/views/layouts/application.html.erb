@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EventEditor</title>
+    <title>Penn Labs Event Editor</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,8 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="content">
+        <%= yield %>
+    </div>
   </body>
 </html>
