@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312003731) do
+ActiveRecord::Schema.define(version: 20180312013634) do
 
   create_table "event", force: :cascade do |t|
     t.text "type"
-    t.text "name"
-    t.text "description"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.text "name", null: false
+    t.text "description", null: false
+    t.datetime "start_time", null: false
+    t.datetime "end_time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_url_file_name"
