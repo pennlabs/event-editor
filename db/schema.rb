@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312013634) do
+ActiveRecord::Schema.define(version: 20180312015951) do
 
   create_table "event", force: :cascade do |t|
     t.text "type"
@@ -20,10 +20,11 @@ ActiveRecord::Schema.define(version: 20180312013634) do
     t.datetime "end_time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_url_file_name"
-    t.string "image_url_content_type"
-    t.integer "image_url_file_size"
-    t.datetime "image_url_updated_at"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.text "image_url", default: "", null: false
   end
 
 end

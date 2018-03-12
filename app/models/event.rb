@@ -1,12 +1,20 @@
 class Event < ApplicationRecord
+  after_save :set_image_url
+
   self.table_name = 'event'
   self.inheritance_column = 'inheritance'
-  validates :image_url, attachment_presence: true
+  validates :image, attachment_presence: true
   validates :name, presence: true
   validates :description, presence: true
   validates_length_of :name, maximum: 100
   validates_length_of :description, maximum: 120
 
-  has_attached_file :image_url
-  validates_attachment_content_type :image_url, content_type: /\Aimage\/.*\z/
+  has_attached_file :image
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
+  private
+
+  def set_image_url
+    update_column(:image_url, image.url)
+  end
 end

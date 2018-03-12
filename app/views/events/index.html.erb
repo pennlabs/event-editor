@@ -17,7 +17,7 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.name %></td>
-        <td><img class="event-img" src="<%= event.image_url %>" /></td>
+        <td><img class="event-img" src="<%= event.image.url %>" /></td>
         <td><%= timeago_tag event.start_time %></td>
         <td><%= timeago_tag event.end_time %></td>
         <td>
