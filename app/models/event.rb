@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  before_save :pre_set_image_url
   after_save :set_image_url
 
   self.table_name = 'event'
@@ -13,6 +14,10 @@ class Event < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   private
+
+  def pre_set_image_url
+    self.image_url = 'unknown' unless image_url
+  end
 
   def set_image_url
     update_column(:image_url, image.url)
