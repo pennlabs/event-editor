@@ -2,6 +2,7 @@
 <hr />
 <%= render 'form', event: @event %>
 
-<hr />
-<%= link_to 'Show', @event, class: 'btn btn-primary' %>
-<%= link_to 'Back', events_path, class: 'btn btn-secondary' %>
+<div class="float-right">
+    <%= link_to 'Show', @event, class: 'btn btn-primary' %>
+    <%= link_to 'Back', events_path, class: 'btn btn-secondary' %>
+</div>
