@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20180312034824) do
     t.text "type", null: false
     t.text "name", null: false
     t.text "description", null: false
-    t.text "image_url", default: "", null: false
+    t.text "image_url", null: false
     t.datetime "start_time", null: false
     t.datetime "end_time", null: false
     t.string "image_file_name"

@@ -4,7 +4,7 @@ class CreateDatabaseStructure < ActiveRecord::Migration[5.1]
       t.text 'type', null: false
       t.text 'name', null: false
       t.text 'description', null: false
-      t.text 'image_url', null: false, default: ''
+      t.text 'image_url', null: false
       t.datetime 'start_time', null: false
       t.datetime 'end_time', null: false
     end
