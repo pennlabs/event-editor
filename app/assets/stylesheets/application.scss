@@ -23,6 +23,8 @@ body {
 #content {
     max-width: 1000px;
     margin: 30px auto;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 #content table {
     table-layout: fixed;
@@ -32,7 +34,7 @@ table img {
     max-width: 50px;
 }
 table .btn {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 .fa-heart {
     width: 1em;
