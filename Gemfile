@@ -22,6 +22,7 @@ gem 'jquery-rails'
 gem 'paperclip', '~> 5.2.1'
 gem 'rails-timeago', '~> 2.0'
 
+gem 'date_validator'
 gem 'devise'
 
 # Use CoffeeScript for .coffee assets and views

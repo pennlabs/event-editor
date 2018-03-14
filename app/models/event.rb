@@ -9,6 +9,8 @@ class Event < ApplicationRecord
   validates :description, presence: true
   validates_length_of :name, maximum: 100
   validates_length_of :description, maximum: 120
+  validates :start_time, presence: true
+  validates :end_time, presence: true, date: { after_or_equal_to: :start_time }
 
   has_attached_file :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
