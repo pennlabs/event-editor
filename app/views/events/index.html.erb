@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @events.each do |event| %>
+    <% if @events.each do |event| %>
       <tr>
         <td><%= event.name %></td>
         <td><img class="event-img" src="<%= event.image.url %>" /></td>
@@ -24,7 +24,11 @@
             <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
         </td>
       </tr>
-    <% end %>
+      <% end.empty? %>
+      <tr>
+        <td colspan="5">You have not added any events yet! Use the button below to add one.</td>
+      </tr>
+      <% end %>
   </tbody>
 </table>
 
