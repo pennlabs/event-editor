@@ -1,24 +1,20 @@
-# README
+# Event Editor
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The event editor application is a user interface for organizers to add/modify events displayed on PennMobile.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+```bash
+bundle install
+rails db:migrate
+rails server
+```
 
-* System dependencies
+## S3 Image Storage
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+By default, images are stored on a folder on the server.
+Set the following environment variables to use S3 to store images:
+- `S3_BUCKET_NAME`
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+- `AWS_REGION`
