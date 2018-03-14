@@ -13,7 +13,7 @@
 <p>
   <strong>Image:</strong> <br />
   <img class="event-img" src="<%= @event.image.url %>">
-  <div>URL: <%= @event.image_url %></div>
+  <div><b>URL:</b> <%= @event.image_url %></div>
 </p>
 
 <p>
@@ -24,6 +24,11 @@
 <p>
   <strong>End time:</strong>
   <%= @event.end_time %> (<%= timeago_tag @event.end_time %>)
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= distance_of_time_in_words(@event.start_time, @event.end_time) %>
 </p>
 <div class="actions">
     <%= link_to 'Edit', edit_event_path(@event), class: "btn btn-primary" %>
