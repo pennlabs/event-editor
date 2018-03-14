@@ -20,6 +20,6 @@ class Event < ApplicationRecord
   end
 
   def set_image_url
-    update_column(:image_url, image.url)
+    update_column(:image_url, "https:#{image.url}")
   end
 end
