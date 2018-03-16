@@ -1,44 +1,76 @@
 <h1>Event</h1>
 <hr />
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <p>
+      <strong>Name:</strong>
+      <%= @event.name %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @event.description %>
+    </p>
 
-<p>
-  <strong>Image:</strong> <br />
-  <img class="event-img" src="<%= @event.image.url %>">
-  <div><b>URL:</b> <%= @event.image_url %></div>
-</p>
+    <p>
+      <strong>Image:</strong> <br />
+      <img class="event-img" src="<%= @event.image.url %>">
+      <div><b>URL:</b> <%= @event.image_url %></div>
+    </p>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @event.start_time %> (<%= timeago_tag @event.start_time, force: true %>)
-</p>
+    <p>
+      <strong>Start time:</strong>
+      <%= @event.start_time %> (<%= timeago_tag @event.start_time, force: true %>)
+    </p>
 
-<p>
-  <strong>End time:</strong>
-  <%= @event.end_time %> (<%= timeago_tag @event.end_time, force: true %>)
-</p>
+    <p>
+      <strong>End time:</strong>
+      <%= @event.end_time %> (<%= timeago_tag @event.end_time, force: true %>)
+    </p>
 
-<p>
-  <strong>Duration:</strong>
-  <%= distance_of_time_in_words(@event.start_time, @event.end_time) %>
-</p>
-<p>
-  <b>Contact Information</b>
-  <ul>
-      <li><b>Email:</b> <%= @event.email %></li>
-      <li><b>Website:</b> <%= @event.website.presence || 'None' %></li>
-      <li><b>Facebook:</b> <%= @event.facebook.presence || 'None' %></li>
-  </ul>
-</p>
-
+    <p>
+      <strong>Duration:</strong>
+      <%= distance_of_time_in_words(@event.start_time, @event.end_time) %>
+    </p>
+    <p>
+      <b>Contact Information</b>
+      <ul>
+          <li><b>Email:</b> <%= @event.email %></li>
+          <li><b>Website:</b> <%= @event.website.presence || 'None' %></li>
+          <li><b>Facebook:</b> <%= @event.facebook.presence || 'None' %></li>
+      </ul>
+    </p>
+  </div>
+  <div class="col-md-6">
+    <b>Preview</b>
+    <div class="phone-preview">
+        <div class="marvel-device iphone-x">
+            <div class="notch">
+                <div class="camera"></div>
+                <div class="speaker"></div>
+            </div>
+            <div class="top-bar"></div>
+            <div class="sleep"></div>
+            <div class="bottom-bar"></div>
+            <div class="volume"></div>
+            <div class="overflow">
+                <div class="shadow shadow--tr"></div>
+                <div class="shadow shadow--tl"></div>
+                <div class="shadow shadow--br"></div>
+                <div class="shadow shadow--bl"></div>
+            </div>
+            <div class="inner-shadow"></div>
+            <div class="screen">
+                <div class="box">
+                    <img src="<%= @event.image.url %>">
+                    <b class="box-title"><%= @event.name %></b>
+                    <span class="box-desc"><%= @event.description %></span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
 <div class="actions">
     <%= link_to 'Edit', edit_event_path(@event), class: "btn btn-primary" %>
     <%= link_to 'Back', events_path, class: "btn btn-secondary float-right" %>

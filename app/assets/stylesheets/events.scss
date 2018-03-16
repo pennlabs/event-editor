@@ -2,6 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "devices.min.css";
+
 .event-img {
     width: 200px;
+}
+.phone-preview {
+    text-align: center;
+    margin: 15px;
+    zoom: 0.6;
+}
+.phone-preview .screen {
+    text-align: left;
+}
+.phone-preview .box {
+    margin: 15px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
+.phone-preview .screen img {
+    width: 100%;
+}
+.phone-preview .box-desc {
+    display: block;
 }
