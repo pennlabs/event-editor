@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  before_save :pre_set_image_url
+  before_save :pre_set_image_url, :normalize_blank_values
   after_save :set_image_url
 
   self.table_name = 'event'
@@ -21,6 +21,11 @@ class Event < ApplicationRecord
 
   def pre_set_image_url
     self.image_url = 'unknown' unless image_url
+  end
+
+  def normalize_blank_values
+    self.website = nil unless website.present?
+    self.facebook = nil unless facebook.present?
   end
 
   def set_image_url

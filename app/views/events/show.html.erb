@@ -36,8 +36,8 @@
       <b>Contact Information</b>
       <ul>
           <li><b>Email:</b> <%= @event.email %></li>
-          <li><b>Website:</b> <%= @event.website.presence || 'None' %></li>
-          <li><b>Facebook:</b> <%= @event.facebook.presence || 'None' %></li>
+          <li><b>Website:</b> <%= @event.website || 'None' %></li>
+          <li><b>Facebook:</b> <%= @event.facebook || 'None' %></li>
       </ul>
     </p>
   </div>
