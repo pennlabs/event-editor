@@ -26,17 +26,26 @@ body {
     padding-left: 30px;
     padding-right: 30px;
 }
+
 #content table {
     table-layout: fixed;
     word-wrap: break-word;
 }
+
 table img {
     max-width: 50px;
 }
+
 table .btn {
     margin-bottom: 5px;
 }
+
 .fa-heart {
     width: 1em;
     color: #F56F71;
+}
+
+.help-text {
+    font-size: 0.8em;
+    color: #666;
 }

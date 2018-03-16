@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312034824) do
+ActiveRecord::Schema.define(version: 20180316023357) do
 
   create_table "event", force: :cascade do |t|
     t.text "type", null: false
@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 20180312034824) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.string "website"
+    t.string "facebook"
+    t.string "email"
   end
 
   create_table "event_users", force: :cascade do |t|

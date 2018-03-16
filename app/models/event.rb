@@ -7,6 +7,8 @@ class Event < ApplicationRecord
   validates :image, attachment_presence: true
   validates :name, presence: true
   validates :description, presence: true
+  validates :email, presence: true
+  validates_email_format_of :email
   validates_length_of :name, maximum: 100
   validates_length_of :description, maximum: 120
   validates :start_time, presence: true

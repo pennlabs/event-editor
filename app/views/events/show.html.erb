@@ -18,18 +18,27 @@
 
 <p>
   <strong>Start time:</strong>
-  <%= @event.start_time %> (<%= timeago_tag @event.start_time %>)
+  <%= @event.start_time %> (<%= timeago_tag @event.start_time, force: true %>)
 </p>
 
 <p>
   <strong>End time:</strong>
-  <%= @event.end_time %> (<%= timeago_tag @event.end_time %>)
+  <%= @event.end_time %> (<%= timeago_tag @event.end_time, force: true %>)
 </p>
 
 <p>
   <strong>Duration:</strong>
   <%= distance_of_time_in_words(@event.start_time, @event.end_time) %>
 </p>
+<p>
+  <b>Contact Information</b>
+  <ul>
+      <li><b>Email:</b> <%= @event.email %></li>
+      <li><b>Website:</b> <%= @event.website.presence || 'None' %></li>
+      <li><b>Facebook:</b> <%= @event.facebook.presence || 'None' %></li>
+  </ul>
+</p>
+
 <div class="actions">
     <%= link_to 'Edit', edit_event_path(@event), class: "btn btn-primary" %>
     <%= link_to 'Back', events_path, class: "btn btn-secondary float-right" %>

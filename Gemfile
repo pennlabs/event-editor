@@ -24,6 +24,7 @@ gem 'rails-timeago', '~> 2.0'
 
 gem 'date_validator'
 gem 'devise'
+gem 'validates_email_format_of'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
