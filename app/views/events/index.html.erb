@@ -16,8 +16,8 @@
       <tr>
         <td><%= event.name %></td>
         <td><img class="event-img" src="<%= event.image.url %>" /></td>
-        <td><%= timeago_tag event.start_time %></td>
-        <td><%= timeago_tag event.end_time %></td>
+        <td><%= timeago_tag event.start_time, force: true %></td>
+        <td><%= timeago_tag event.end_time, force: true %></td>
         <td>
             <%= link_to 'Show', event, class: "btn btn-primary btn-sm" %>
             <%= link_to 'Edit', edit_event_path(event), class: "btn btn-success btn-sm" %>
