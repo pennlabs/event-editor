@@ -52,11 +52,13 @@
 }
 .phone-preview .box-title {
     font-size: 18px;
+    word-wrap: break-word;
 }
 .phone-preview .box-desc, .phone-preview .box-date {
     color: #888;
     font-size: 14px;
     display: block;
+    word-wrap: break-word;
 }
 .phone-preview .box-date {
     margin-top: 5px;
