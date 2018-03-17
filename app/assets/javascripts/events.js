@@ -16,6 +16,24 @@ $(document).on("turbolinks:load", function() {
             reader.readAsDataURL(this.files[0]);
         }
     });
+    $("#event_start_time").change(function() {
+        var val = $("#event_start_time").val();
+        if (val) {
+            val = new Date(Date.parse(val));
+            var hrs = val.getHours();
+            if (hrs > 12) {
+                hrs -= 12;
+            }
+            var mins = val.getMinutes();
+            if (mins < 10) {
+                mins = "0" + mins;
+            }
+            $(".box-date").text("Today at " + hrs + ":" + mins + (hrs == val.getHours() ? 'am' : 'pm'));
+        }
+        else {
+            $(".box-date").text("Today at 7:20pm");
+        }
+    });
     $("#events tbody tr").click(function(e) {
         e.preventDefault();
         Turbolinks.visit($(this).attr("data-link"));
