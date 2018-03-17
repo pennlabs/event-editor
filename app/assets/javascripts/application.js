@@ -19,3 +19,5 @@
 //= require rails-timeago
 
 //= require_tree .
+
+jQuery.timeago.settings.allowFuture = true;
