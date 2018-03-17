@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on("turbolinks:load", function() {
     $("#event_name").keyup(function() {
         $(".box-title").text($(this).val() || "Your Title");
     });
