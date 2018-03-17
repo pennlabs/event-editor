@@ -34,15 +34,24 @@
         </div>
 
         <div class="form-group">
-            <%= form.label :end_time %>
-            <div><%= form.text_field :end_time, id: :event_end_time, class: "form-control" %></div>
-            <div id="quick-buttons">
-                <button class="btn btn-light btn-sm" data-value="1800">30 Minutes</button>
-                <button class="btn btn-light btn-sm" data-value="3600">1 Hour</button>
-                <button class="btn btn-light btn-sm" data-value="7200">2 Hours</button>
-                <button class="btn btn-light btn-sm" data-value="10800">3 Hours</button>
-                <button class="btn btn-light btn-sm" data-value="86400">1 Day</button>
-                <button class="btn btn-light btn-sm" data-value="172800">2 Days</button>
+            <div id="duration-wrapper">
+                <span>Duration</span>
+                <div id="quick-buttons">
+                    <button class="btn btn-light btn-sm" data-value="900">15 Minutes</button>
+                    <button class="btn btn-light btn-sm" data-value="1200">20 Minutes</button>
+                    <button class="btn btn-light btn-sm" data-value="1800">30 Minutes</button>
+                    <button class="btn btn-light btn-sm" data-value="3600">1 Hour</button>
+                    <button class="btn btn-light btn-sm" data-value="5400">90 Minutes</button>
+                    <button class="btn btn-light btn-sm" data-value="7200">2 Hours</button>
+                    <button class="btn btn-light btn-sm" data-value="10800">3 Hours</button>
+                    <button class="btn btn-light btn-sm" data-value="86400">1 Day</button>
+                    <button class="btn btn-light btn-sm" data-value="172800">2 Days</button>
+                    <button class="btn btn-light btn-sm" data-value="other">Other</button>
+                </div>
+            </div>
+            <div id="end-time-wrapper">
+                <%= form.label :end_time %>
+                <div><%= form.text_field :end_time, id: :event_end_time, class: "form-control" %></div>
             </div>
         </div>
 

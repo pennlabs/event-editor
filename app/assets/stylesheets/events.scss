@@ -64,6 +64,9 @@
 #event_start_time, #event_end_time {
     background-color: white;
 }
-#quick-buttons {
+#quick-buttons .btn {
     margin-top: 5px;
+}
+#end-time-wrapper {
+    display: none;
 }
