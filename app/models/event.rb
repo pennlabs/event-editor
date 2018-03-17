@@ -20,11 +20,11 @@ class Event < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   def prev
-    Event.where('start_time < ?', start_time).order(:start_time).last
+    Event.where('start_time < ?', start_time).order(:start_time).last or Event.order(:start_time).last
   end
 
   def next
-    Event.where('start_time > ?', start_time).order(:start_time).first
+    Event.where('start_time > ?', start_time).order(:start_time).first or Event.order(:start_time).first
   end
 
   private
