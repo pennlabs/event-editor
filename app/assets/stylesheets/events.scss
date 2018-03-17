@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //*= require devices.min.css
+//*= require flatpickr.min.css
 
 #events tbody tr {
     cursor: pointer;
@@ -50,4 +51,7 @@
 }
 .phone-preview .box-date {
     margin-top: 5px;
+}
+#event_start_time, #event_end_time {
+    background-color: white;
 }

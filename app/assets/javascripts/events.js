@@ -1,3 +1,5 @@
+//= require flatpickr.min.js
+
 $(document).on("turbolinks:load", function() {
     $("#event_name").keyup(function() {
         $(".box-title").text($(this).val() || "Your Title");
@@ -24,5 +26,9 @@ $(document).on("turbolinks:load", function() {
     });
     $("#events tbody tr .btn").click(function(e) {
         e.stopPropagation();
+    });
+    $("#event_start_time, #event_end_time").flatpickr({
+        enableTime: true,
+        dateFormat: 'Y-m-d H:i:S'
     });
 });
