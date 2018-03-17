@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  paginates_per 25
+
   before_save :pre_set_image_url, :normalize_blank_values
   after_save :set_image_url
 
