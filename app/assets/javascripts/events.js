@@ -41,11 +41,11 @@ $(document).on("turbolinks:load", function() {
     $("#events tbody tr .btn").click(function(e) {
         e.stopPropagation();
     });
-    $("#event_start_time").flatpickr({
+    var start_time = flatpickr("#event_start_time", {
         enableTime: true,
-        defaultDate: '2018-04-14 00:00:00',
         dateFormat: 'Y-m-d H:i:S'
     });
+    start_time.changeMonth(3, false);
     var end_time = flatpickr("#event_end_time", {
         enableTime: true,
         dateFormat: 'Y-m-d H:i:S'
