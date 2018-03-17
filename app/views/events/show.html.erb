@@ -42,6 +42,10 @@
     </p>
   </div>
   <div class="col-md-6">
+      <div class="float-right">
+        <%= link_to '<', @event.prev, class: "btn btn-secondary btn-sm" %>
+        <%= link_to '>', @event.next, class: "btn btn-secondary btn-sm" %>
+      </div>
       <b>Preview</b>
       <%= render 'preview' %>
   </div>
@@ -51,7 +55,5 @@
     <%= link_to 'Edit', edit_event_path(@event), class: "btn btn-primary" %>
     <div class="float-right">
         <%= link_to 'Back', events_path, class: "btn btn-secondary" %>
-        <%= link_to '<', @event.prev, class: "btn btn-secondary" %>
-        <%= link_to '>', @event.next, class: "btn btn-secondary" %>
     </div>
 </div>
