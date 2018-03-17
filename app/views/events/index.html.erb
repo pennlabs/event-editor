@@ -1,4 +1,4 @@
-<h2>Your Events</h2>
+<h2>Fling Performers</h2>
 <hr />
 <table id="events" class="table table-hover">
   <thead>
@@ -25,7 +25,7 @@
       </tr>
       <% end.empty? %>
       <tr>
-        <td colspan="5">You have not added any events yet! Use the button below to add one.</td>
+        <td colspan="5">You have not added any performers yet! Use the button below to add one.</td>
       </tr>
       <% end %>
   </tbody>
@@ -35,4 +35,4 @@
 <%= paginate @events %>
 
 
-<%= link_to 'New Event', new_event_path, class: "btn btn-success" %>
+<%= link_to 'New Performer', new_event_path, class: "btn btn-success" %>

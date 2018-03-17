@@ -43,6 +43,7 @@ $(document).on("turbolinks:load", function() {
     });
     $("#event_start_time").flatpickr({
         enableTime: true,
+        defaultDate: '2018-04-14 00:00:00',
         dateFormat: 'Y-m-d H:i:S'
     });
     var end_time = flatpickr("#event_end_time", {

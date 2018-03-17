@@ -58,19 +58,19 @@
         <div class="form-group">
             <%= form.label :email %>
             <%= form.text_field :email, id: :event_email, class: "form-control" %>
-            <span class="help-text">We will use this field to contact you if there are any issues with the event.</span>
+            <span class="help-text">We will use this to contact you if there are any issues with the information.</span>
         </div>
 
         <div class="form-group">
             <%= form.label :website %>
             <%= form.text_field :website, id: :event_website, class: "form-control" %>
-            <span class="help-text">Optional, A link to a website associated with this event.</span>
+            <span class="help-text">A link to a website associated with this event. (Optional)</span>
         </div>
 
         <div class="form-group">
             <%= form.label :facebook %>
             <%= form.text_field :facebook, id: :event_facebook, class: "form-control" %>
-            <span class="help-text">Optional, A link to the facebook event associated with this event.</span>
+            <span class="help-text">A link to the facebook page associated with this event. (Optional)</span>
         </div>
     </div>
     <div class="col-md-6">
@@ -79,6 +79,6 @@
     </div>
 </div>
 <div class="actions float-left">
-    <%= form.submit class: 'btn btn-primary' %>
+    <%= form.submit (form.object.new_record? ? 'Create' : 'Update'), class: 'btn btn-primary' %>
 </div>
 <% end %>
