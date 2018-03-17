@@ -19,6 +19,14 @@ class Event < ApplicationRecord
   has_attached_file :image, styles: { original: ['800x', :jpg] }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
+  def prev
+    Event.where('start_time < ?', start_time).order(:start_time).last
+  end
+
+  def next
+    Event.where('start_time > ?', start_time).order(:start_time).first
+  end
+
   private
 
   def pre_set_image_url
