@@ -14,18 +14,32 @@
 }
 .phone-preview .screen {
     text-align: left;
+    font-family: 'HelveticaNeue', 'Helvetica';
 }
 .phone-preview .box {
     margin: 15px;
-    padding: 15px;
     background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    box-shadow: 1px 1px 10px #ccc;
+    border-radius: 15px;
     font-size: 1.5em;
+}
+.phone-preview .box-text {
+    padding: 15px;
 }
 .phone-preview .screen img {
     width: 100%;
 }
-.phone-preview .box-desc {
+.phone-preview .box .img-wrapper {
+    border-radius: 15px 15px 0 0;
+    height: 150px;
+    overflow: hidden;
+    background-color: #eee;
+}
+.phone-preview .box-title {
+    font-size: 18px;
+}
+.phone-preview .box-desc, .phone-preview .box-date {
+    color: #888;
+    font-size: 14px;
     display: block;
 }

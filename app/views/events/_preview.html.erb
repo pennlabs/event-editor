@@ -1,0 +1,29 @@
+<div class="phone-preview">
+    <div class="marvel-device iphone8 silver">
+        <div class="top-bar"></div>
+        <div class="sleep"></div>
+        <div class="volume"></div>
+        <div class="camera"></div>
+        <div class="sensor"></div>
+        <div class="speaker"></div>
+        <div class="screen">
+            <%= image_tag 'phone_header.png' %>
+            <div class="box">
+                <div class="img-wrapper">
+                    <% if @event.image.exists? %>
+                        <img src="<%= @event.image.url %>">
+                    <% else %>
+                        <img />
+                    <% end %>
+                </div>
+                <div class="box-text">
+                    <b class="box-title"><%= @event.name.presence or 'Your Title' %></b>
+                    <span class="box-desc"><%= @event.description.presence or 'Your Description' %></span>
+                    <span class="box-date">Today at 7:20pm</span>
+                </div>
+            </div>
+        </div>
+        <div class="home"></div>
+        <div class="bottom-bar"></div>
+    </div>
+</div>
