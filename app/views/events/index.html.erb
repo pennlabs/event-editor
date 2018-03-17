@@ -1,6 +1,6 @@
 <h2>Your Events</h2>
 <hr />
-<table class="table table-hover">
+<table id="events" class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -13,13 +13,12 @@
 
   <tbody>
     <% if @events.each do |event| %>
-      <tr>
+      <tr data-link="<%= event_path(event) %>">
         <td><%= event.name %></td>
         <td><img class="event-img" src="<%= event.image.url %>" /></td>
         <td><%= timeago_tag event.start_time, force: true %></td>
         <td><%= timeago_tag event.end_time, force: true %></td>
         <td>
-            <%= link_to 'Show', event, class: "btn btn-primary btn-sm" %>
             <%= link_to 'Edit', edit_event_path(event), class: "btn btn-success btn-sm" %>
             <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
         </td>

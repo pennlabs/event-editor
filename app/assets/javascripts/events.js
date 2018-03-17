@@ -14,4 +14,11 @@ $(document).on("turbolinks:load", function() {
             reader.readAsDataURL(this.files[0]);
         }
     });
+    $("#events tbody tr").click(function(e) {
+        e.preventDefault();
+        Turbolinks.visit($(this).attr("data-link"));
+    });
+    $("#events tbody tr .btn").click(function(e) {
+        e.stopPropagation();
+    });
 });

@@ -4,6 +4,9 @@
 
 //*= require devices.min.css
 
+#events tbody tr {
+    cursor: pointer;
+}
 .event-img {
     width: 200px;
 }
