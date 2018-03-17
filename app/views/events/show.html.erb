@@ -20,12 +20,12 @@
 
     <p>
       <strong>Start time:</strong>
-      <%= @event.start_time.to_formatted_s(:long) %> (<%= timeago_tag @event.start_time, force: true %>)
+      <%= @event.start_time.to_formatted_s(:custom_long) %> (<%= timeago_tag @event.start_time, force: true %>)
     </p>
 
     <p>
       <strong>End time:</strong>
-      <%= @event.end_time.to_formatted_s(:long) %> (<%= timeago_tag @event.end_time, force: true %>)
+      <%= @event.end_time.to_formatted_s(:custom_long) %> (<%= timeago_tag @event.end_time, force: true %>)
     </p>
 
     <p>
