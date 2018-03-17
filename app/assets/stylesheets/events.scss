@@ -38,13 +38,15 @@
     width: 100%;
 }
 .phone-preview .box .img-wrapper {
-    border-radius: 15px 15px 0 0;
-    height: 175px;
-    overflow: hidden;
     background-color: #eee;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
 }
-.phone-preview .img-wrapper img {
-    display: none;
+.phone-preview .box .img-wrapper img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 175px;
 }
 .phone-preview .box-title {
     font-size: 18px;

@@ -11,7 +11,7 @@
             <div class="box">
                 <div class="img-wrapper">
                     <% if @event.image.exists? %>
-                        <img src="<%= @event.image.url %>">
+                        <img style="background-image: url(<%= @event.image.url %>)">
                     <% else %>
                         <img />
                     <% end %>

@@ -11,15 +11,10 @@ $(document).on("turbolinks:load", function() {
         if (this.files && this.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                $(".img-wrapper img").attr("src", e.target.result);
+                $(".img-wrapper img").css("background-image", "url(" + e.target.result + ")");
             };
             reader.readAsDataURL(this.files[0]);
         }
-    });
-    $(".img-wrapper img").on("load", function() {
-        $(this).parent().css("position", "relative");
-        var offset = ($(this).parent().height() - $(this).height()) / 2;
-        $(this).css({"top": offset, "position": "absolute", "display": "block"});
     });
     $("#events tbody tr").click(function(e) {
         e.preventDefault();
