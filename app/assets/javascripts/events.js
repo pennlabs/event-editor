@@ -14,6 +14,10 @@ $(document).on("turbolinks:load", function() {
             reader.readAsDataURL(this.files[0]);
         }
     });
+    $(".img-wrapper img").on("load", function() {
+        $(this).parent().css("position", "relative");
+        $(this).css({"top": -$(this).height() / 8, "position": "absolute"});
+    });
     $("#events tbody tr").click(function(e) {
         e.preventDefault();
         Turbolinks.visit($(this).attr("data-link"));
