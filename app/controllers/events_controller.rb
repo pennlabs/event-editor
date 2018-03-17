@@ -5,7 +5,11 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.order(:start_time).page params[:page]
+    @events = if params.key?(:q)
+                Event.where('name LIKE ?', "%#{params[:q]}%").order(:start_time).page params[:page]
+              else
+                Event.order(:start_time).page params[:page]
+              end
   end
 
   # GET /events/1
