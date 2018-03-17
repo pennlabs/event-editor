@@ -21,6 +21,8 @@
 .phone-preview .screen {
     text-align: left;
     font-family: 'HelveticaNeue', 'Helvetica';
+    user-select: none;
+    pointer-events: none;
 }
 .phone-preview .box {
     margin: 15px;
@@ -40,6 +42,9 @@
     height: 175px;
     overflow: hidden;
     background-color: #eee;
+}
+.phone-preview .img-wrapper img {
+    display: none;
 }
 .phone-preview .box-title {
     font-size: 18px;

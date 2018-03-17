@@ -18,7 +18,7 @@ $(document).on("turbolinks:load", function() {
     });
     $(".img-wrapper img").on("load", function() {
         $(this).parent().css("position", "relative");
-        $(this).css({"top": -$(this).height() / 8, "position": "absolute"});
+        $(this).css({"top": -$(this).height() / 8, "position": "absolute", "display": "block"});
     });
     $("#events tbody tr").click(function(e) {
         e.preventDefault();
