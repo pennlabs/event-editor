@@ -23,8 +23,20 @@ $(document).on("turbolinks:load", function() {
     $("#events tbody tr .btn").click(function(e) {
         e.stopPropagation();
     });
-    $("#event_start_time, #event_end_time").flatpickr({
+    $("#event_start_time").flatpickr({
         enableTime: true,
         dateFormat: 'Y-m-d H:i:S'
+    });
+    var end_time = flatpickr("#event_end_time", {
+        enableTime: true,
+        dateFormat: 'Y-m-d H:i:S'
+    });
+    $("#quick-buttons .btn").click(function(e) {
+        e.preventDefault();
+        if (!$("#event_start_time").val()) return;
+        var time = parseInt($(this).attr("data-value"));
+        var start = Date.parse($("#event_start_time").val());
+        var end = new Date(start + time * 1000);
+        end_time.setDate(end);
     });
 });
