@@ -21,3 +21,11 @@
 //= require_tree .
 
 jQuery.timeago.settings.allowFuture = true;
+
+$(document).on("turbolinks:load", function() {
+    setTimeout(function() {
+        $(".alert").each(function() {
+            $(this).slideUp();
+        });
+    }, 3000);
+});
