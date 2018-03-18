@@ -29,6 +29,11 @@ $(document).on("turbolinks:load", function() {
                 mins = "0" + mins;
             }
             $(".box-date").text("Today at " + hrs + ":" + mins + (hrs == val.getHours() ? 'am' : 'pm'));
+
+            var selected_button = $("#quick-buttons .btn.btn-primary");
+            if (selected_button.length) {
+                selected_button.click();
+            }
         }
         else {
             $(".box-date").text("Today at 7:20pm");
@@ -71,6 +76,7 @@ $(document).on("turbolinks:load", function() {
         e.preventDefault();
         var raw = $(this).attr("data-value");
         if (raw == "other") {
+            $("#quick-buttons .btn").removeClass("btn-primary").addClass("btn-light");
             $("#duration-wrapper").slideUp();
             $("#end-time-wrapper").slideDown();
             return;
