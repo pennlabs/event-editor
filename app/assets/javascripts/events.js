@@ -36,9 +36,11 @@ $(document).on("turbolinks:load", function() {
     });
     $("#events tbody tr").click(function(e) {
         e.preventDefault();
-        Turbolinks.visit($(this).attr("data-link"));
+        if (!$(e.target).hasClass('btn-danger')) {
+            Turbolinks.visit($(this).attr("data-link"));
+        }
     });
-    $("#events tbody tr .btn").click(function(e) {
+    $("#events tbody tr .btn-success").click(function(e) {
         e.stopPropagation();
     });
     if ($("#event_start_time").length) {
