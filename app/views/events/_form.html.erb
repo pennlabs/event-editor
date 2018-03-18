@@ -3,7 +3,7 @@
     <div class="col-md-6">
         <% if event.errors.any? %>
             <div class="alert alert-danger">
-                <b><%= pluralize(event.errors.count, "error") %> prevented this event from being saved:</b>
+                <b><%= pluralize(event.errors.count, "error") %> prevented this <%= event_item.downcase %> from being saved:</b>
 
                 <ul>
                     <% event.errors.full_messages.each do |message| %>
