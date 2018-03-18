@@ -41,11 +41,11 @@ $(document).on("turbolinks:load", function() {
     $("#events tbody tr .btn").click(function(e) {
         e.stopPropagation();
     });
-    var start_time = flatpickr("#event_start_time", {
-        enableTime: true,
-        dateFormat: 'Y-m-d H:i:S'
-    });
-    if (start_time) {
+    if ($("#event_start_time").length) {
+        var start_time = flatpickr("#event_start_time", {
+            enableTime: true,
+            dateFormat: 'Y-m-d H:i:S'
+        });
         start_time.changeMonth(3, false);
     }
     var end_time = flatpickr("#event_end_time", {
