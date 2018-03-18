@@ -45,7 +45,9 @@ $(document).on("turbolinks:load", function() {
         enableTime: true,
         dateFormat: 'Y-m-d H:i:S'
     });
-    start_time.changeMonth(3, false);
+    if (start_time) {
+        start_time.changeMonth(3, false);
+    }
     var end_time = flatpickr("#event_end_time", {
         enableTime: true,
         dateFormat: 'Y-m-d H:i:S'
