@@ -1,7 +1,5 @@
 {
   "name": "event-editor",
   "private": true,
-  "dependencies": {
-    "yarn": "^1.5.1"
-  }
+  "dependencies": {}
 }
