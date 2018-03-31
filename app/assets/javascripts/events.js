@@ -59,7 +59,36 @@ $(document).on("turbolinks:load", function() {
             $("#end-time-wrapper").show();
             $("#duration-wrapper").hide();
         }
+
+        var date = moment($("#event_end_time").val(), "YYYY-MM-DD HH:mm:SS Z");
+        $("#end_time_date").val(date.format("MM/DD/YYYY"));
+        $("#end_time_time").val(date.format("HH:mm:SS"));
     }
+
+    if ($("#event_start_time").val()) {
+        var date = moment($("#event_start_time").val(), "YYYY-MM-DD HH:mm:SS Z");
+        $("#start_time_date").val(date.format("MM/DD/YYYY"));
+        $("#start_time_time").val(date.format("HH:mm:SS"));
+    }
+
+    $("form").submit(function() {
+        var start = $("#event_start_time");
+        var end = $("#event_end_time");
+        if (start.length) {
+            var sd = $("#start_time_date").val();
+            var st = $("#start_time_time").val();
+            if (sd && st) {
+                start.val(moment(sd + st + " -0400").format("YYYY-MM-DD HH:mm:SS Z"));
+            }
+        }
+        if (end.length) {
+            var ed = $("#end_time_date").val();
+            var et = $("#end_time_time").val();
+            if (ed && et) {
+                end.val(moment(ed + et + " -0400").format("YYYY-MM-DD HH:mm:SS Z"));
+            }
+        }
+    });
 
     $("#quick-buttons .btn").click(function(e) {
         e.preventDefault();
@@ -81,7 +110,9 @@ $(document).on("turbolinks:load", function() {
         $(this).addClass("btn-primary").removeClass("btn-light");
         var time = parseInt(raw);
         var start = Date.parse($("#event_start_time").val());
-        var end = new Date(start + time * 1000);
-        $("#event_end_time").val(moment(end).format("Y-m-d HH:mm:SS ZZ"));
+        var end = moment(new Date(start + time * 1000));
+        $("#end_time_date").val(end.format("MM/DD/YYYY"));
+        $("#end_time_time").val(end.format("HH:mm:SS"));
+        $("#event_end_time").val(end.format("Y-m-d HH:mm:SS ZZ"));
     });
 });

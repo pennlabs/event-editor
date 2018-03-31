@@ -30,7 +30,11 @@
 
         <div class="form-group">
             <%= form.label :start_time %>
-            <div><%= form.text_field :start_time, id: :event_start_time, class: "form-control" %></div>
+            <div class="form-inline">
+                <input type="text" class="form-control mr-1" id="start_time_date" />
+                <input type="text" class="form-control" id="start_time_time" />
+                <%= form.hidden_field :start_time, id: :event_start_time, class: "form-control" %>
+            </div>
         </div>
 
         <div class="form-group">
@@ -51,7 +55,11 @@
             </div>
             <div id="end-time-wrapper">
                 <%= form.label :end_time %>
-                <div><%= form.text_field :end_time, id: :event_end_time, class: "form-control" %></div>
+                <div class="form-inline">
+                    <input type="text" class="form-control mr-1" id="end_time_date" />
+                    <input type="text" class="form-control" id="end_time_time" />
+                    <%= form.hidden_field :end_time, id: :event_end_time, class: "form-control" %>
+                </div>
             </div>
         </div>
 
