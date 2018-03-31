@@ -1,4 +1,5 @@
 //= require moment.min.js
+//= require jquery-ui.min.js
 
 $(document).on("turbolinks:load", function() {
     $("#event_name").keyup(function() {
@@ -70,6 +71,8 @@ $(document).on("turbolinks:load", function() {
         $("#start_time_date").val(date.format("MM/DD/YYYY"));
         $("#start_time_time").val(date.format("HH:mm:SS"));
     }
+
+    $("#start_time_date, #end_time_date").datepicker();
 
     $("form").submit(function() {
         var start = $("#event_start_time");
