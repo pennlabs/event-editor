@@ -1,5 +1,3 @@
-//= require flatpickr.min.js
-
 $(document).on("turbolinks:load", function() {
     $("#event_name").keyup(function() {
         $(".box-title").text($(this).val() || "Your Title");
@@ -48,16 +46,6 @@ $(document).on("turbolinks:load", function() {
     $("#events tbody tr .btn-success").click(function(e) {
         e.stopPropagation();
     });
-    if ($("#event_start_time").length) {
-        var start_time = flatpickr("#event_start_time", {
-            enableTime: true,
-            dateFormat: 'Y-m-d H:i:S'
-        });
-    }
-    var end_time = flatpickr("#event_end_time", {
-        enableTime: true,
-        dateFormat: 'Y-m-d H:i:S'
-    });
 
     if ($("#event_end_time").val()) {
         var diff = (Date.parse($("#event_end_time").val()) - Date.parse($("#event_start_time").val())) / 1000;
@@ -92,6 +80,6 @@ $(document).on("turbolinks:load", function() {
         var time = parseInt(raw);
         var start = Date.parse($("#event_start_time").val());
         var end = new Date(start + time * 1000);
-        end_time.setDate(end);
+        // TODO: set the date
     });
 });
