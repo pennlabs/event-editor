@@ -1,0 +1,11 @@
+<h2>Crop <%= event_item %></h2>
+<hr />
+<%= form_with(model: @event, url: event_path, local: true) do |form| %>
+    <div class="form-group">
+        <%= form.cropbox :image %>
+    </div>
+    <div class="actions float-left">
+        <%= form.submit 'Crop', class: 'btn btn-primary' %>
+    </div>
+<% end %>
+<div class="float-right"><%= link_to 'Cancel', events_path, class: 'btn btn-secondary' %></div>

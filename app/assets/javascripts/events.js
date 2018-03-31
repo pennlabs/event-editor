@@ -1,6 +1,8 @@
 //= require moment.min.js
 //= require jquery-ui.min.js
 //= require jquery.timepicker.min.js
+//= require jquery.jcrop
+//= require papercrop
 
 $(document).on("turbolinks:load", function() {
     $("#event_name").keyup(function() {

@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_event_user!, :set_type
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :crop_preview, :crop]
 
   # GET /events
   # GET /events.json
@@ -67,6 +67,15 @@ class EventsController < ApplicationController
     end
   end
 
+  def crop_preview
+  end
+
+  def crop
+    @event.image.reprocess!
+    format.html { redirect_to event_path, notice: "#{helpers.event_item} was successfully updated." }
+    format.json { render :show, status: :ok, location: @event }
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -81,6 +90,6 @@ class EventsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
-    params.require(:event).permit(:name, :description, :image, :start_time, :end_time, :website, :facebook, :email)
+    params.require(:event).permit(:name, :description, :image, :start_time, :end_time, :website, :facebook, :email, :image_original_w, :image_original_h, :image_crop_x, :image_crop_y, :image_crop_w, :image_crop_h)
   end
 end

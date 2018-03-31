@@ -5,6 +5,7 @@
 //*= require devices.min.css
 //*= require jquery-ui.min.css
 //*= require jquery.timepicker.min.css
+//*= require jquery.jcrop
 
 #events tbody tr {
     cursor: pointer;
@@ -72,4 +73,7 @@
 }
 #end-time-wrapper {
     display: none;
+}
+.jcrop-holder {
+    margin: 0 auto;
 }
