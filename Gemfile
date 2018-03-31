@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'paperclip', '~> 5.2.1'
+gem 'paperclip', '~> 6.0.0'
 gem 'papercrop'
 gem 'rails-timeago', '~> 2.0'
 
