@@ -1,3 +1,5 @@
+//= require moment.min.js
+
 $(document).on("turbolinks:load", function() {
     $("#event_name").keyup(function() {
         $(".box-title").text($(this).val() || "Your Title");
@@ -80,6 +82,6 @@ $(document).on("turbolinks:load", function() {
         var time = parseInt(raw);
         var start = Date.parse($("#event_start_time").val());
         var end = new Date(start + time * 1000);
-        // TODO: set the date
+        $("#event_end_time").val(moment(end).format("Y-m-d HH:mm:SS ZZ"));
     });
 });
