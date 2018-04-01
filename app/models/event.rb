@@ -16,7 +16,7 @@ class Event < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, presence: true, date: { after_or_equal_to: :start_time }
 
-  has_attached_file :image, styles: { original: ['800x>', :jpg] }
+  has_attached_file :image, styles: { original: ['800x>', :jpg] }, processors: [:papercrop]
   crop_attached_file :image, aspect: '16:9'
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
