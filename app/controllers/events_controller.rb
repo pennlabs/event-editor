@@ -72,6 +72,7 @@ class EventsController < ApplicationController
 
   def crop
     @event.image.reprocess!
+    @event.save
     format.html { redirect_to event_path, notice: "#{helpers.event_item} was successfully updated." }
     format.json { render :show, status: :ok, location: @event }
   end
