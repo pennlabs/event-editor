@@ -15,7 +15,7 @@
     <% if @events.each do |event| %>
       <tr data-link="<%= event_path(@type, event) %>">
         <td><%= event.name %></td>
-        <td><img class="event-img" src="<%= event.image.url %>" /></td>
+        <td><img class="event-img" src="<%= event.image_url %>" /></td>
         <td><%= timeago_tag event.start_time, force: true %></td>
         <td><%= timeago_tag event.end_time, force: true %></td>
         <td>

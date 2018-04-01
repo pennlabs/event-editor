@@ -20,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'paperclip', '~> 6.0.0'
-gem 'papercrop'
+gem 'papercrop', '~> 0.3.0', git: 'https://github.com/rsantamaria/papercrop.git'
 gem 'rails-timeago', '~> 2.0'
 
 gem 'date_validator'

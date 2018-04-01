@@ -16,8 +16,8 @@ class Event < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, presence: true, date: { after_or_equal_to: :start_time }
 
-  has_attached_file :image, styles: { original: ['800x>', :jpg] }, processors: [:papercrop]
-  crop_attached_file :image, aspect: '16:9'
+  has_attached_file :image, styles: { cropped: { geometry: '800x>', format: :jpg } }
+  crop_attached_file :image, aspect: false
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   def prev
@@ -45,9 +45,9 @@ class Event < ApplicationRecord
 
   def set_image_url
     if image.url.start_with?('//')
-      update_column(:image_url, "https:#{image.url}")
+      update_column(:image_url, "https:#{image.url(:cropped)}")
     else
-      update_column(:image_url, image.url)
+      update_column(:image_url, image.url(:cropped))
     end
   end
 end

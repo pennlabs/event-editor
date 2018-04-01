@@ -2,7 +2,7 @@
 <hr />
 <%= form_with(model: @event, url: event_path, local: true) do |form| %>
     <div class="form-group">
-        <%= form.cropbox :image %>
+        <%= form.cropbox :image, box_width: 800 %>
     </div>
     <div class="actions float-left">
         <%= form.submit 'Crop', class: 'btn btn-primary' %>
