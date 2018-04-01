@@ -36,8 +36,8 @@
       <b>Contact Information</b>
       <ul>
           <li><b>Email:</b> <%= @event.email %></li>
-          <li><b>Website:</b> <%= @event.website ? link_to(@event.website, @event.website) : 'None' %></li>
-          <li><b>Facebook:</b> <%= @event.facebook ? link_to(@event.facebook, @event.facebook) : 'None' %></li>
+          <li><b>Website:</b> <%= @event.website ? link_to(@event.website, absolute_url(@event.website)) : 'None' %></li>
+          <li><b>Facebook:</b> <%= @event.facebook ? link_to(@event.facebook, absolute_url(@event.facebook)) : 'None' %></li>
       </ul>
     </p>
   </div>
